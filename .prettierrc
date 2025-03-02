@@ -1,0 +1,24 @@
+{
+  "arrowParens": "always",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "endOfLine": "lf",
+  "printWidth": 80,
+  "trailingComma": "all",
+  "semi": true,
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "^(@ivaoaero/(.*)$)|^(@ivaoaero$)",
+    "",
+    "<BUILTIN_MODULES>",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "<TYPES>",
+    "^types$",
+    "",
+    "^[./]"
+  ],
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderTypeScriptVersion": "5.8.2"
+}
