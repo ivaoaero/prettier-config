@@ -13,6 +13,7 @@ export const generateImportOrder = (
     importOrder = [
       '^(react/(.*)$)|^(react$)',
       '',
+      '^(@ivao/(.*)$)|^(@ivao$)',
       '^(@ivaoaero/(.*)$)|^(@ivaoaero$)',
       '',
       '<BUILTIN_MODULES>',

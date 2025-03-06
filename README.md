@@ -8,16 +8,16 @@ To use this config, follow the installation instructions.
 Install the following packages:
 
 - `prettier`
-- `@ivaoaero/prettier-config`
+- `@ivao/prettier-config`
 
-`yarn add -D prettier @ivaoaero/prettier-config`
+`yarn add -D prettier @ivao/prettier-config`
 
 ### package.json
 
 You can add the following to your `package.json` file to use this config:
 
 ```json
-"prettier": "@ivaoaero/prettier-config",
+"prettier": "@ivao/prettier-config",
 ```
 
 Using this setup, you cannot modify anything.
@@ -27,7 +27,7 @@ Using this setup, you cannot modify anything.
 You can add a `.prettierrc` file to your project to use this config:
 
 ```
-"@ivaoaero/prettier-config"
+"@ivao/prettier-config"
 ```
 
 Using this setup, you cannot modify anything.
@@ -37,8 +37,8 @@ Using this setup, you cannot modify anything.
 You can add a `.prettierrc` file to your project to use this config:
 
 ```js
-const ivaoPrettierConfig = require('@ivaoaero/prettier-config');
-const generateImportOrder = require('@ivaoaero/prettier-config/generateImportOrder');
+const ivaoPrettierConfig = require('@ivao/prettier-config');
+const generateImportOrder = require('@ivao/prettier-config/generateImportOrder');
 
 module.exports = generateImportOrder(['@components', '', '@lib', '@config']);
 ```
