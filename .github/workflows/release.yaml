@@ -32,6 +32,7 @@ jobs:
     if: success('commitlint') && success('build')
     name: Release package
     runs-on: self-hosted
+    environment: default # environment with NPM_TOKEN
     permissions:
       contents: write # publish a GitHub release
       id-token: write # use OIDC for npm provenance
