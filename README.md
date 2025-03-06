@@ -9,8 +9,9 @@ Install the following packages:
 
 - `prettier`
 - `@ivao/prettier-config`
+- `@ianvs/prettier-plugin-sort-imports`
 
-`yarn add -D prettier @ivao/prettier-config`
+`npm add --save-dev prettier @ivao/prettier-config @ianvs/prettier-plugin-sort-imports` or `yarn add -D prettier @ivao/prettier-config @ianvs/prettier-plugin-sort-imports` or `pnpm add -D prettier @ivao/prettier-config @ianvs/prettier-plugin-sort-imports`
 
 ### package.json
 
