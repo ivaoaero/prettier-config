@@ -31,7 +31,7 @@ jobs:
       - build
     if: success('commitlint') && success('build')
     name: Release package
-    runs-on: self-hosted
+    runs-on: ubuntu-24.04
     environment: default # environment with NPM_TOKEN
     permissions:
       contents: write # publish a GitHub release

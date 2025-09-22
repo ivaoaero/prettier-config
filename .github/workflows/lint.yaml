@@ -6,7 +6,7 @@ on:
 jobs:
   lint:
     name: Lint project files
-    runs-on: self-hosted
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
