@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  id-token: write # for npm OIDC
   contents: read # for checkout
 
 jobs:
@@ -47,9 +48,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@ivaoaero'
-          cache: 'pnpm'
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@ivaoaero"
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts --strict-peer-dependencies
@@ -63,6 +64,5 @@ jobs:
       - name: Release prettier-config package
         run: pnpm release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
