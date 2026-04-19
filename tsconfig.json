@@ -6,12 +6,14 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
+    "rootDir": "./src",
     "outDir": "./dist",
-    "module": "CommonJS"
+    "module": "NodeNext",
+    "types": ["node"]
   },
   "exclude": ["node_modules", "dist"],
   "include": ["src"]
