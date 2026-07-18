@@ -13,16 +13,19 @@ Install the following packages:
 - `prettier-plugin-tailwindcss`
 
 NPM:
+
 ```sh
 npm add --save-dev prettier @ivao/prettier-config @ianvs/prettier-plugin-sort-imports prettier-plugin-tailwindcss
 ```
 
 Yarn:
+
 ```sh
 yarn add -D prettier @ivao/prettier-config @ianvs/prettier-plugin-sort-imports prettier-plugin-tailwindcss
 ```
 
 PNPM:
+
 ```sh
 pnpm add -D prettier @ivao/prettier-config @ianvs/prettier-plugin-sort-imports prettier-plugin-tailwindcss
 ```
@@ -60,7 +63,7 @@ module.exports = generateImportOrder(['@components', '', '@lib', '@config']);
 
 #### `generateImportOrder`
 
-`generateImportOrder` takes two arguments and returns a prettier config object.
+`generateImportOrder` takes four optional arguments and returns a Prettier config object.
 
 ##### First argument: `importOrder`
 
@@ -74,6 +77,42 @@ Consult the docs of the `@ianvs/prettier-plugin-sort-imports` package for more i
 `overwrite` is a boolean value.
 If `true`, the `importOrder` array will overwrite the default import order.
 Otherwise, the `importOrder` array will be merged into the default import order.
+
+##### Third argument: `importOrderTypeScriptVersion`
+
+`importOrderTypeScriptVersion` is the TypeScript version used by
+`@ianvs/prettier-plugin-sort-imports` to parse imports.
+It defaults to `6.0.3`.
+
+##### Fourth argument: `tailwind`
+
+`tailwind` is an optional object for configuring `prettier-plugin-tailwindcss`.
+It supports the following properties:
+
+- `tailwindStylesheet`: Sets the `tailwindStylesheet` option. This is required
+  when using Tailwind CSS v4 or newer.
+- `tailwindConfig`: Sets the `tailwindConfig` option when provided.
+- `tailwindFunctions`: Sets the functions whose arguments should be sorted as
+  Tailwind classes. It defaults to `['clsx', 'cva']`.
+
+`tailwindStylesheet` and `tailwindConfig` are mutually exclusive and cannot be
+provided together. Use `tailwindStylesheet` for Tailwind CSS v4 or newer, or
+`tailwindConfig` for earlier Tailwind CSS versions. `tailwindFunctions` can be
+used with either option.
+
+For example:
+
+```js
+module.exports = generateImportOrder(
+  ['@components', '', '@lib', '@config'],
+  false,
+  '6.0.3',
+  {
+    tailwindStylesheet: './src/styles.css',
+    tailwindFunctions: ['clsx', 'cva', 'cn'],
+  },
+);
+```
 
 ## Ignore files
 
