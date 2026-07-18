@@ -32,7 +32,7 @@ jobs:
       - build
     if: success('commitlint') && success('build')
     name: Release package
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     environment: default # environment with NPM_TOKEN
     permissions:
       contents: write # publish a GitHub release
@@ -41,11 +41,11 @@ jobs:
       packages: write # publish a NPM package
       pull-requests: write # comment on released pull requests
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           registry-url: "https://npm.pkg.github.com"
@@ -56,7 +56,7 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts --strict-peer-dependencies
 
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: prettier-config-build
           path: dist
