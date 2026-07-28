@@ -48,9 +48,9 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@ivaoaero"
-          cache: "pnpm"
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@ivaoaero'
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts --strict-peer-dependencies
